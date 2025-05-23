@@ -9,23 +9,37 @@ def clear_display():
     sleep(1)
     system('cls')
 
-def sum_custom():
+def sum_hard():
+    num1 = randint(1, 100)
+    num2 = randint(1, 100)
+    result = num1 + num2
+    print(f"{num1} + {num2} = ?")
+    return result
+
+def sum_easy():
     num1 = randint(1, 10)
     num2 = randint(1, 10)
     result = num1 + num2
     print(f"{num1} + {num2} = ?")
     return result
 
-def subtraction():
+def subtractioneasy():
     num1 = randint(1, 10)
     num2 = randint(1, 10)
     result = num1 - num2
     print(f"{num1} - {num2} = ?")
     return result
 
+def subtractionhard():
+    num1 = randint(1, 100)
+    num2 = randint(1, 100)
+    result = num1 - num2
+    print(f"{num1} - {num2} = ?")
+    return result
+
 def multiplication():
-    num1 = randint(1, 10)
-    num2 = randint(1, 10)
+    num1 = randint(1, 100)
+    num2 = randint(1, 100)
     result = num1 * num2
     print(f"{num1} * {num2} = ?")
     return result
@@ -48,14 +62,14 @@ def validation(correct_result, user_result):
         print(f"Wrong! The correct answer was {correct_result}.")
 
 def niveleasy():
-    operation = choice([sum_custom, subtraction])
+    operation = choice([sum_easy, subtractioneasy])
     correct_result = operation()
     user_result = user_insert()
     validation(correct_result, user_result)
     continue_game()
 
 def nivelhard():
-    operation = choice([sum_custom, subtraction, multiplication])
+    operation = choice([sum_hard, subtractionhard, multiplication])
     correct_result = operation()
     user_result = user_insert()
     validation(correct_result, user_result)
@@ -70,7 +84,9 @@ def continue_game():
                 clear_display()
                 break
             elif option1 == 2 :
-                print("Okay, Getting out ... ")
+                print(f"You endend with {score} points !")
+                sleep(1.2)
+                print("Exiting ...")
                 clear_display()
                 exit()
             else : 

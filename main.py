@@ -1,6 +1,6 @@
 from functions import niveleasy, nivelhard, clear_display
 
-def main() :
+def menu() :
     while True :
         try :
             nivel = int(input("Select the nivel (1. Easy | 2. Hard) >> "))
@@ -17,7 +17,7 @@ def main() :
             clear_display()
 
 if __name__ == '__main__' :
-    main()
+    menu()
         
 
 
