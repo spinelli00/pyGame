@@ -1,13 +1,8 @@
+from utils.utils import clear_display
 from random import randint, choice
 from sys import exit
-from os import system
 from time import sleep
 score: int = 0
-
-
-def clear_display():
-    sleep(1)
-    system('cls')
 
 def sum_hard():
     num1 = randint(1, 100)
